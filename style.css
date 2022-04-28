@@ -1,0 +1,21 @@
+body{
+    display: flex;
+    border:0px;
+    margin:0px;
+}
+
+#gridContainer {
+    display: flex;
+    max-width: 960px;
+    max-height: 960px;
+    background-color: pink;
+    border:0px;
+    margin:0px;
+}
+
+.grid{
+    display: flex;
+    background-color: lightseagreen;
+    border:0px;
+    margin:0px;
+}
