@@ -15,9 +15,10 @@ function createDivs () {
     userSelection =prompt("test");
     console.log(userSelection)
     for (let i = userSelection; i > 0 ; i--){
-        grid ;
-        grid.textContent= "userSelection";
-        gridContainer.appendChild(grid);
+        const grid = document.createElement('div');
+        grid.classList.add("grid");
+        grid.textContent = `${i} /` ;
+        gridContainer.appendChild(grid);   
     }
  
 }
