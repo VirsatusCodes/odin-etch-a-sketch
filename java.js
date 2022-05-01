@@ -33,11 +33,12 @@ function removeDivs() {
 }
 
 function createDivs () {
+    if (userSelection <= 100) {
     for (let i = userSelection; i > 0 ; i--){
         const grid = document.createElement('div');
         grid.classList.add("grid");
         grid.textContent = `${i}/` ;
         gridContainer.appendChild(grid);   
     }
- 
+}
 }
