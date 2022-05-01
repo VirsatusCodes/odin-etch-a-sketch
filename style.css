@@ -2,15 +2,18 @@ body{
     display: flex;
     border:0px;
     margin:0px;
+    flex-flow: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
 }
 
 #gridContainer {
     display: flex;
-    max-width: 960px;
-    max-height: 960px;
+    width: 600px;
+    height: 600px;
     background-color: pink;
-    border:0px;
-    margin:0px;
+    border: solid black;
 }
 
 .grid{
@@ -18,4 +21,11 @@ body{
     background-color: lightseagreen;
     border:0px;
     margin:0px;
+    flex: 1;
+}
+
+.footer{
+    display: flex;
+    background-color: darkblue;
+    color:white;
 }
