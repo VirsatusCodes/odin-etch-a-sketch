@@ -1,14 +1,3 @@
-const gridContainer = document.querySelector('#gridContainer');
-const grid = document.createElement('div');
-grid.classList.add('grid');
-grid.textContent= " test";
-gridContainer.appendChild(grid);
-
-const grid1 = document.createElement('div');
-grid1.classList.add('grid');
-grid1.textContent= " test";
-gridContainer.appendChild(grid1);
-
 const userPrompt = document.querySelector('#userPrompt');
 userPrompt.addEventListener('click', () => {
     getUserSelection();
@@ -32,13 +21,31 @@ function removeDivs() {
     }
 }
 
+// had some trouble with this as i was initially using 'i' as my 
+// value in this area 'grid.style.width= 600 / userSelection + 'px';'
+// however this causes 'i' to change based on iteration thereby
+//setting off false width or other variables, i realized this
+//quickly but at one point thought i was wrong due to analyzing
+//the situation incorrectly, should have added a console.log to check
+//the value sooner. goign to test a flex basis solution now.
+// flex basis solution works just fine, i learned more about
+//how to use the ${} as well, didnt realize you could include more
+// things in there besides a single value, very useful.
+// will be keeping this solution as it should work even if the 
+//dimensions of the box are altered.
+
 function createDivs () {
     if (userSelection <= 100) {
+        for (let i = userSelection; i > 0; i--){
     for (let i = userSelection; i > 0 ; i--){
+        let px = 'px'
         const grid = document.createElement('div');
         grid.classList.add("grid");
         grid.textContent = `${i}/` ;
-        gridContainer.appendChild(grid);   
+        grid.style.flex= `1 0 ${100/userSelection}%`;
+        gridContainer.appendChild(grid);
     }
+    
+}
 }
 }
