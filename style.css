@@ -14,6 +14,7 @@ body{
     height: 600px;
     background-color: pink;
     border: solid black;
+    flex-flow: row wrap;
 }
 
 .grid{
@@ -21,11 +22,15 @@ body{
     background-color: lightseagreen;
     border:0px;
     margin:0px;
-    flex: 1;
 }
 
 .footer{
     display: flex;
     background-color: darkblue;
     color:white;
+}
+
+.button{
+    display: flex;
+    padding-bottom: 50px;
 }
