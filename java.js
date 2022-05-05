@@ -24,7 +24,7 @@ hover.addEventListener('mouseover', (function (e) {
 //can continue to create without using a function.
 
 function getUserSelection() {
-    userSelection = prompt("test");
+    userSelection = prompt("How large of a grid would you like? (highest input is 100)");
 }
 
 function removeDivs() {
