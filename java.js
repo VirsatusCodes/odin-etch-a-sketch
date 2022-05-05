@@ -5,6 +5,18 @@ userPrompt.addEventListener('click', () => {
     createDivs();
 });
 
+// opted to use a function event call instead of creating a seperate
+//function because atm im not sure how or if its possible to
+// in a function call for it using the event target as the target
+// with the ease it does here, and its a good notes reference for
+//using both examples. and theres nothing inherently wrong with doing it
+//like this anyways.
+
+const hover = document.querySelector('#gridContainer');
+hover.addEventListener('mouseover', (function (e) {
+    e.target.style.background = "black";
+}))
+
 //you cant normally create multiple divs like this, however
 //i guess because of interactions with scope if its in a function
 // you can create  new div's using the same variable, OR you can 
@@ -38,10 +50,8 @@ function createDivs () {
     if (userSelection <= 100) {
         for (let i = userSelection; i > 0; i--){
     for (let i = userSelection; i > 0 ; i--){
-        let px = 'px'
         const grid = document.createElement('div');
         grid.classList.add("grid");
-        grid.textContent = `${i}/` ;
         grid.style.flex= `1 0 ${100/userSelection}%`;
         gridContainer.appendChild(grid);
     }
