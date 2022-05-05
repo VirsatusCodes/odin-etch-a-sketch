@@ -5,6 +5,11 @@ userPrompt.addEventListener('click', () => {
     createDivs();
 });
 
+window.onload = function () {
+    userSelection = 16;
+    createDivs () ;
+}
+
 // opted to use a function event call instead of creating a seperate
 //function because atm im not sure how or if its possible to
 // in a function call for it using the event target as the target
