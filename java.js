@@ -19,14 +19,8 @@ window.onload = function () {
 
 const hover = document.querySelector('#gridContainer');
 hover.addEventListener('mouseover', (function (e) {
-    e.target.style.background = "black";
+    e.target.style.background = getColorValues();
 }))
-
-//you cant normally create multiple divs like this, however
-//i guess because of interactions with scope if its in a function
-// you can create  new div's using the same variable, OR you can 
-//do the initial declaration using "let" instead of "const" and you
-//can continue to create without using a function.
 
 function getUserSelection() {
     userSelection = prompt("How large of a grid would you like? (highest input is 100)");
@@ -63,4 +57,18 @@ function createDivs () {
     
 }
 }
+}
+
+//you cant normally create multiple divs like this, however
+//i guess because of interactions with scope if its in a function
+// you can create  new div's using the same variable, OR you can 
+//do the initial declaration using "let" instead of "const" and you
+//can continue to create without using a function.
+
+
+function getColorValues() {
+    let r = Math.random()*100;
+    let g=Math.random()*100;
+    let b=Math.random()*100;
+    return `rgb(${r}, ${g}, ${b})`;
 }
