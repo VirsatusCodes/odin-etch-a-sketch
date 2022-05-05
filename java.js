@@ -19,7 +19,7 @@ window.onload = function () {
 
 const hover = document.querySelector('#gridContainer');
 hover.addEventListener('mouseover', (function (e) {
-    e.target.style.background = getColorValues();
+    e.target.style.background = graduallyBlack();
 }))
 
 function getUserSelection() {
@@ -66,9 +66,24 @@ function createDivs () {
 //can continue to create without using a function.
 
 
-function getColorValues() {
-    let r = Math.random()*100;
-    let g=Math.random()*100;
-    let b=Math.random()*100;
-    return `rgb(${r}, ${g}, ${b})`;
+// function getColorValues() {
+//     let r = Math.random()*100;
+//     let g=Math.random()*100;
+//     let b=Math.random()*100;
+//     return `rgb(${r}, ${g}, ${b})`;
+// }
+// function to randomly give back a color.
+let calledTimes= 10
+function graduallyBlack() {
+    let r = 32;
+     let g=178;
+     let b=170;
+     calledTimes += -1;
+     if (calledTimes < 1){
+        return `rgb(${0}, ${0}, ${0})`;
+     }
+    else return `rgb(${r-(r/calledTimes)}, ${g-(g/calledTimes)}, ${b-(b/calledTimes)})`;
 }
+
+//black = rgb(0,0,0)
+//light seagreen = rgb(32,178,170)
